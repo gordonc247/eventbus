@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Codefire.EventBus
+namespace Codefire.EventBus.Memory
 {
-    public class SubscriptionManager : ISubscriptionManager
+    public class MemorySubscriptionManager : ISubscriptionManager
     {
         private static readonly object SubscriptionsLock = new object();
         private readonly Dictionary<Type, List<SubscriptionInfo>> _subscriptions;
 
-        public SubscriptionManager()
+        public MemorySubscriptionManager()
         {
             _subscriptions = new Dictionary<Type, List<SubscriptionInfo>>();
         }
